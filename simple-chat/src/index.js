@@ -18,7 +18,7 @@ function getMesagesFromLocalStorage () {
   }
 }
 
-function saveMessageToLocalStorage (message) {
+function saveMessageToLocalStorage(message) {
   let messages = localStorage.getItem('messages');
   if (messages == '' || messages == null) {
     localStorage.setItem('messages', JSON.stringify({'all':[]}));
@@ -29,7 +29,7 @@ function saveMessageToLocalStorage (message) {
   localStorage.setItem('messages', JSON.stringify(messages));
 }
 
-function createMessageBlock (message, save=true) {
+function createMessageBlock(message, save) {
     let message_block = document.createElement('div');
     message_block.className = 'message';
      
@@ -55,7 +55,7 @@ function createMessageBlock (message, save=true) {
     }
 }
 
-function handleSubmit (event) {
+function handleSubmit(event) {
   console.log('fff')
   event.preventDefault();
   let time = new Date();
@@ -63,6 +63,6 @@ function handleSubmit (event) {
     'text': input.value,
     'date': `${time.getHours()}:${time.getMinutes()}`,
   };
-  createMessageBlock(message);
+  createMessageBlock(message, save=true);
   input.value = '';
 }
