@@ -14,7 +14,7 @@ function getMesagesFromLocalStorage () {
   } 
   messages = JSON.parse(messages);
   for (let message of messages.all) {
-    createMessageBlock(message, save=false);
+    createMessageBlock(message, false);
   }
 }
 
