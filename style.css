@@ -1,0 +1,114 @@
+/* html {
+    box-sizing: border-box;
+    font-family: Roboto;
+} */
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #fff;
+    min-height: 100vh;
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    height: 100px;
+    background-color: #8e24aa; 
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 100px;
+    overflow-y: scroll;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evently;
+    width: 100%;
+    border-top: 1px solid #dedede;
+}
+
+.message { 
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 8px;
+    padding: 10px 20px 0px 10px;
+    word-break:break-all;
+    align-self: flex-end;
+    background-color: #f1e5f4;
+}
+
+.message-text {
+    align-self: flex-end;
+    font-size: 14px;
+}
+
+.message-meta {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.message-date {
+    color: #7c797d;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
+
+.form-input {
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    height: 60px;
+    padding-left: 15px;
+    width: calc(100% - 2px);
+}
+
+.attachment {
+    background-color: white;
+    color: #7c797d;
+    border: 0;
+    padding-right: 15px;
+    flex-basis: 60px;
+}
+
+.arrow_back {
+    background-color: #8e24aa;
+    color: white;
+    border: 0;
+    padding-right: 15px;
+    flex-basis: 60px;
+}
+
+.search {
+    background-color: #8e24aa;
+    color: white;
+    border: 0;
+    padding-right: 15px;
+    flex-basis: 60px;
+    margin-left: 90%;
+}
+.more_vert {
+    background-color: #8e24aa;
+    color: white;
+    border: 0;
+    padding-right: 15px;
+    flex-basis: 60px;
+    margin-right: 0;
+}
