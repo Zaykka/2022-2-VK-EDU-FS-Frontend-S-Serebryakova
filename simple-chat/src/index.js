@@ -1,11 +1,13 @@
+import "./index.css"
+
 const form = document.querySelector('form');
 const input = document.querySelector('.form-input');
-const chat = document.querySelector('.messages');
+const chat = document.querySelector('.messages')
 
-form.addEventListener('submit', this.handleSubmit.bind(this));
-document.addEventListener('DOMContentLoaded', this.getMesagesFromLocalStorage.bind(this));
+form.addEventListener('submit', handleSubmit.bind(this));
+document.addEventListener('DOMContentLoaded', getMesagesFromLocalStorage.bind(this))
 
-function getMesagesFromLocalStorage() {
+function getMesagesFromLocalStorage () {
   let messages = localStorage.getItem('messages');
   if (messages == '' || messages == null) {
     return
@@ -16,7 +18,7 @@ function getMesagesFromLocalStorage() {
   }
 }
 
-function saveMessageToLocalStorage(message) {
+function saveMessageToLocalStorage (message) {
   let messages = localStorage.getItem('messages');
   if (messages == '' || messages == null) {
     localStorage.setItem('messages', JSON.stringify({'all':[]}));
@@ -27,7 +29,7 @@ function saveMessageToLocalStorage(message) {
   localStorage.setItem('messages', JSON.stringify(messages));
 }
 
-function createMessageBlock(message, save=true) {
+function createMessageBlock (message, save=true) {
     let message_block = document.createElement('div');
     message_block.className = 'message';
      
@@ -45,21 +47,22 @@ function createMessageBlock(message, save=true) {
 
     message_meta.append(message_date);
 
-    message_block.append(message_meta);
+    message_block.append(message_meta)
     
-    chat.append(message_block)
+    chat.append(message_block);
     if (save) {
       saveMessageToLocalStorage(message);
     }
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
-    let time = new Date();
-    let message = {
-      'text': input.value,
-      'date': `${time.getHours()}:${time.getMinutes()}`
-    };
-    createMessageBlock(message);
+function handleSubmit (event) {
+  console.log('fff')
+  event.preventDefault();
+  let time = new Date();
+  let message = {
+    'text': input.value,
+    'date': `${time.getHours()}:${time.getMinutes()}`,
+  };
+  createMessageBlock(message);
+  input.value = '';
 }
-
