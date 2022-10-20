@@ -56,13 +56,12 @@ function createMessageBlock(message, save) {
 }
 
 function handleSubmit(event) {
-  console.log('fff')
   event.preventDefault();
   let time = new Date();
   let message = {
     'text': input.value,
     'date': `${time.getHours()}:${time.getMinutes()}`,
   };
-  createMessageBlock(message, save=true);
+  createMessageBlock(message, true);
   input.value = '';
 }
