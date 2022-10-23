@@ -2,32 +2,60 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>Send a message</title>
-        <link rel="stylesheet" href="index.css">
+        <title>Chat list</title>
+        <link rel="stylesheet" href="css/chat.css">
+        <link rel="stylesheet" href="css/float-button.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/page.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet"></head>
     <body>
         <header>
-            <button class="arrow_back" type="">
-                <span class="material-icons">arrow_back</span>
+            <button class="menu" type="">
+                <span class="material-icons">menu</span>  
             </button>
+            <div class="header_messenger">Messenger</div>
             <button class="search" type="">
                 <span class="material-icons">search</span>
             </button>
-            <button class="more_vert" type="">
-                <span class="material-icons">more_vert</span>  
-            </button>
         </header>
 
-        <div class="messages">
-        </div>
+        <section class="chats-list">
+            <div class="chat" onclick="goToChat();">
+                <div class="chat-picture">
+                    <img class="picture" src="src/chat_list/images/img1.png" alt="profile_photo"  style="width:60px;height:60px;">
+                </div>
+                <div class="chat-details">
+                    <span class="chat-name">Дженнифер Эшли</span>
+                    <span class="chat-last-message">Ты куда пропал?</span>
+                </div>
+                <div class="chat-meta">
+                    <span class="chat-time">15:52</span>
+                    <span class="material-icons done_all">done_all</span>
+                </div>
+            </div>
+            <div class="chat" onclick="goToChat();">
+                <div class="chat-picture">
+                    <img class="picture" src="src/chat_list/images/img2.png" alt="profile_photo" style="width:60px;height:60px;">
+                </div>
+                <div class="chat-details">
+                    <span class="chat-name">Общество целых бокалов</span>
+                    <span class="chat-last-message">Ребят, без меня сегодня :(</span>
+                </div>
+                <div class="chat-meta">
+                    <span class="chat-time">15:52</span>
+                    <span class="material-icons done_all">done_all</span>
+                </div>
+            </div>
+        </section>
 
-        <form class="form" action="/">
-            <input class="form-input" name="message-text" placeholder="Cообщение" type="textarea">
-            <button class="attachment" ><span class="material-icons">attachment</span></button>
-        </form>
+        <button class="float-button">
+            <span class="material-icons">create</span>
+        </button>
 
-        <script, src="index.js">       
+        <script src="src/chat_list/js/index.js"> 
+        </script>  
+        <script src="src/chat_list/js/goToChat.js">  
         </script>
     <script type="text/javascript" src="bundle.js"></script></body>
 </html>
