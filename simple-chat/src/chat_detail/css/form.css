@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evently;
+    width: 100%;
+    border-top: 1px solid #dedede;
+}
+
+.form-input {
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    height: 60px;
+    padding-left: 15px;
+    width: calc(100% - 2px);
+}
+
+.attachment {
+    background-color: white;
+    color: #7c797d;
+    border: 0;
+    padding-right: 15px;
+    flex-basis: 60px;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}

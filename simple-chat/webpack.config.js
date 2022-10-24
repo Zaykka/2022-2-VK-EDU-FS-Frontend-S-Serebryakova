@@ -12,7 +12,7 @@ const BUILD_PATH = path.resolve(__dirname, 'build');
 module.exports = {
     context: SRC_PATH,
     entry: {
-        index: './index.js',
+        index: './chat_list/js/index.js',
     },
     output: {
         path: BUILD_PATH,
@@ -43,7 +43,7 @@ module.exports = {
                 ],
             },
             {
-                test: /index\.css$/,
+                test: [/page\.css$/, /form\.css$/, /header\.css$/, /chat\.css$/, /float-button\.css$/],
                 include: SRC_PATH,
                 use: [
                     {
@@ -62,7 +62,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             filename: 'index.html',
-            template: './index.html'
+            template: './chat_list/index.html'
         })
     ]
 };

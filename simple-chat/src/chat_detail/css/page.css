@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #fff;
+    min-height: 100vh;
+    font-size: 14px;
+}
