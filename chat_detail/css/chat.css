@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 .messages {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     flex-basis: 100px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .message { 
@@ -15,11 +17,13 @@
     word-break:break-all;
     align-self: flex-end;
     background-color: #f1e5f4;
+    animation: anim-lineUp 0.8s  ;
 }
 
 .message-text {
     align-self: flex-end;
     font-size: 14px;
+    animation: anim-lineUp 0.8s  ;
 }
 
 .message-meta {
@@ -32,3 +36,21 @@
 .message-date {
     color: #7c797d;
 }
+
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }

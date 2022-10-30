@@ -8,6 +8,11 @@
     flex-direction: row;
     color: black;
     background-color: white;
+    transition: background-color 0.5s  0.2s; ;
+}
+
+.chat:hover {
+    background-color: #dcc8e3;
 }
 
 .chat-picture {
@@ -15,6 +20,9 @@
     align-items: center;
 }
 
+.picture {
+    border-radius: 60px;
+}
 .chat-details {
     display:flex;
     flex-direction: column;
