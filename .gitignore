@@ -3,3 +3,4 @@ build/
 simple-chat/package-lock.json
 simple-chat/package.json
 simple-chat/webpack.config.js
+*.DS_Store
