@@ -11,7 +11,7 @@ export default function PageChat() {
 
     function getMesagesFromLocalStorage () {
         let messages = localStorage.getItem('messages');
-        if (messages == '' || messages == null) {
+        if (messages === '' || messages === null) {
           return
         } 
         messages = JSON.parse(messages);
@@ -20,7 +20,7 @@ export default function PageChat() {
 
     function saveMessageToLocalStorage(message) {
         let messages = localStorage.getItem('messages');
-        if (messages == '' || messages == null) {
+        if (messages === '' || messages === null) {
             localStorage.setItem('messages', JSON.stringify({ 'all': [] }));
         }
         messages = localStorage.getItem('messages');
