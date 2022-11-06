@@ -1,22 +1,24 @@
-name: GitHub Pages
-run-name: ${{ github.actor }} is rolling out a new version of the app 🚀
+name: Github Pages Deploy
+
 on: [push]
+
 jobs:
-  Build-and-Deploy:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+    
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - name: Install npm deps
-      working-directory: ./react-chat
-      run: npm i
-    - name: Build app
-      working-directory: ./react-chat
-      run: npm run build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./react-chat/public
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install and build
+        run: npm install && npm run build
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.        
