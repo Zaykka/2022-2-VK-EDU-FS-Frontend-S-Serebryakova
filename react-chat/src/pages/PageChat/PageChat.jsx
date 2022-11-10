@@ -5,7 +5,7 @@ import MessageList from '../../components/MessageList/MessageList';
 import classes from './PageChat.module.css'
 
 
-export default function PageChat() {
+export default function PageChat({handleLoginClick}) {
     const [messages, setMessages] = useState([])
     const [text, setText] = useState('');
 
@@ -56,7 +56,7 @@ export default function PageChat() {
     useEffect(loadMessages, [])
     return (
         <div className={classes.pageChat}>
-            <ChatHeader></ChatHeader>
+            <ChatHeader onClick={handleLoginClick}></ChatHeader>
             <MessageList messages={messages}></MessageList>
             <MessageForm
                 onSubmit={handleSubmit}

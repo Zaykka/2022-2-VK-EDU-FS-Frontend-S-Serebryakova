@@ -2,10 +2,10 @@ import React from 'react'
 import classes from './ChatHeader.module.css'
 
 
-export default function Header() {
+export default function Header({onClick}) {
     return (
         <header className={classes.header}>
-            <button className={classes.arrow_back} type="">
+            <button className={classes.arrow_back} type="" onClick={onClick}>
                 <span className="material-icons">arrow_back</span>
             </button>
             <button className={classes.search} type="">

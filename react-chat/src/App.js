@@ -1,21 +1,16 @@
 import './App.css';
-import PageChatList from './pages/PageChatList/PageChatList';
-import PageChat from './pages/PageChat/PageChat';
-import {Routes, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import LoginControl from './utils/GoToChat'
 
 
-function App() {
-  return (  
-    <div className="App">
-      {/* <PageChatList></PageChatList> */}
-
-      <Routes>
-        <Route path="/" element={<PageChatList/>}/>
-        <Route path="/chats" element={<PageChat/>}/>
-      </Routes>
-    </div>
-
-  );
+class App extends Component {
+	render() {
+		return (
+			<div>
+				 <LoginControl/>
+			</div>
+		);
+	}
 }
 
 export default App;

@@ -5,28 +5,23 @@ import FloatButton from '../../components/FloatButton/FloatButtonon'
 import classes from './PageChatList.module.css'
 import image1 from './images/img1.png'
 import image2 from './images/img2.png'
-import { useNavigate } from "react-router-dom";
 
 
-export default function PageChatList() {
-    let navigate = useNavigate();
-    const routeChange = () => {
-        navigate('/chats');
-    }
+export default function PageChatList({handleLoginClick}) {
 
     return (
         <>
             <ChatListHeader></ChatListHeader>
             <section className={classes.chats_list}>
                 <Chat
-                    onClick={routeChange}
+                    onClick={handleLoginClick}
                     chat_name={"Дженнифер Эшли"}
                     img_path={image1}
                     chat_last_message={"Ты куда пропал?"}
                     chat_time={"15:30"}
                 ></Chat>
                 <Chat
-                    onClick={routeChange}
+                    onClick={handleLoginClick}
                     chat_name={"Общество целых бокалов"}
                     img_path={image2}
                     chat_last_message={"Ребят, без меня сегодня :("}
