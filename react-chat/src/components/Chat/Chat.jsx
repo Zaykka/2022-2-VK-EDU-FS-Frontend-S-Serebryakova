@@ -2,11 +2,9 @@ import React from 'react'
 import classes from './Chat.module.css'
 
 
-export default function Chat({onClick, chat_name, img_path, chat_last_message, chat_time }) {
-
+export default function Chat({ handleChatClick, chat_name, img_path, chat_last_message, chat_time }) {
     return (
-
-        <div className={classes.chat} onClick={onClick}>
+        <div className={classes.chat} onClick={handleChatClick}>
             <div className={classes.chat_picture}>
                 <img className={classes.picture} src={img_path} alt="profile_photo" style={{ width: 60, height: 60 }} />
             </div>

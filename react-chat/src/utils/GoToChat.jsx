@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
-import { Greeting } from './Greeting';
+import { MoveToPage } from './MoveToPage';
 
 
-
-class LoginControl extends Component {
+class GoToChat extends Component {
 	constructor(props) {
 		super(props);
-		this.handleLoginClick = this.handleLoginClick.bind(this);
-		// this.handleLogoutClick = this.handleLogoutClick;
+		this.handleChatClick = this.handleChatClick.bind(this);
 		this.state = { isClickOnChat: false };
 	}
 
-	handleLoginClick() {
-		console.log('f')
-		console.log(this)
+	handleChatClick() {
 		this.setState({ isClickOnChat: !this.state.isClickOnChat });
 	}
 
-	// handleLogoutClick() {
-	// 	this.setState({ isClickOnChat: false });
-	// }
-
 	render() {
 		const isClickOnChat = this.state.isClickOnChat;
-		// let button;
 
-		// button = <LogoutButton onClick={ this.handleLoginClick } />
 		return (
 			<div>
-				<Greeting isClickOnChat={isClickOnChat} handleLoginClick={ this.handleLoginClick } />
+				<MoveToPage isClickOnChat={isClickOnChat} handleChatClick={this.handleChatClick} />
 			</div>
 		);
 	}
 }
-export default LoginControl;
+export default GoToChat;
