@@ -5,18 +5,18 @@ import MessageList from '../../components/MessageList/MessageList';
 import classes from './PageChat.module.css'
 
 
-export default function PageChat({handleChatClick}) {
+export default function PageChat({ handleChatClick }) {
     const [messages, setMessages] = useState([])
     const [text, setText] = useState('');
 
-    function getMesagesFromLocalStorage () {
+    function getMesagesFromLocalStorage() {
         let messages = localStorage.getItem('messages');
         if (messages === '' || messages === null) {
-          return
-        } 
+            return
+        }
         messages = JSON.parse(messages);
         return messages.all;
-      }
+    }
 
     function saveMessageToLocalStorage(message) {
         let messages = localStorage.getItem('messages');
@@ -36,13 +36,17 @@ export default function PageChat({handleChatClick}) {
     function handleSubmit(event) {
         event.preventDefault();
 
+        if (text === '') {
+            return;
+        }
+
         let time = new Date();
         let message = {
             'text': text,
             'meta': `${time.getHours()}:${time.getMinutes()}`,
             'id': Date.now()
         };
-        setMessages([...messages, { ...message, id: Date.now()}]);
+        setMessages([...messages, { ...message, id: Date.now() }]);
         saveMessageToLocalStorage(message)
         setText('');
     }
@@ -70,4 +74,3 @@ export default function PageChat({handleChatClick}) {
     )
 }
 
- 
