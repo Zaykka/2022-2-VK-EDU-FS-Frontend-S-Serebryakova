@@ -3,11 +3,17 @@ import ChatHeader from '../../components/ChatHeader/ChatHeader';
 import MessageForm from '../../components/MessageForm/MessageForm';
 import MessageList from '../../components/MessageList/MessageList';
 import classes from './PageChat.module.css'
+import { useNavigate } from "react-router-dom";
 
 
-export default function PageChat({ handleChatClick }) {
+export default function PageChat() {
     const [messages, setMessages] = useState([])
     const [text, setText] = useState('');
+
+    let navigate = useNavigate();
+    const routeChange = () => {
+        navigate('/');
+    }
 
     function getMesagesFromLocalStorage() {
         let messages = localStorage.getItem('messages');
@@ -60,7 +66,7 @@ export default function PageChat({ handleChatClick }) {
     useEffect(loadMessages, [])
     return (
         <div className={classes.pageChat}>
-            <ChatHeader handleChatClick={handleChatClick}></ChatHeader>
+            <ChatHeader handleChatClick={routeChange}></ChatHeader>
             <MessageList messages={messages}></MessageList>
             <MessageForm
                 onSubmit={handleSubmit}

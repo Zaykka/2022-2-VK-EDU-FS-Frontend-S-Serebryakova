@@ -3,6 +3,7 @@ import classes from './Chat.module.css'
 
 
 export default function Chat({ handleChatClick, chat_name, img_path, chat_last_message, chat_time }) {
+
     return (
         <div className={classes.chat} onClick={handleChatClick}>
             <div className={classes.chat_picture}>
