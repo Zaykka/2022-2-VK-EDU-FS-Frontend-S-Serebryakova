@@ -14,9 +14,15 @@ export default function PageChatList() {
         navigate('/messages');
     }
 
+    const profileRouteChange = () => {
+        navigate('/profile');
+    }
+
     return (
         <>
-            <ChatListHeader></ChatListHeader>
+            <ChatListHeader
+                handleProfileClick={profileRouteChange}
+            ></ChatListHeader>
             <section className={classes.chats_list}>
                 <Chat
                     handleChatClick={routeChange}
