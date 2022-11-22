@@ -14,11 +14,14 @@
 }
 
 .header_messenger {
-    background-color: #8e24aa;
-    padding-top: 2.5%;
-    flex-basis: 95%;
+    /* background-color: #8e24aa; */
+    /* padding-top: 2.5%; */
     color: white;
+    display: flex;
+    flex-basis: 95%;
+    margin-left: 5%;
     font-size: 20px;
+    align-items: center;
 }
 
 .search {
