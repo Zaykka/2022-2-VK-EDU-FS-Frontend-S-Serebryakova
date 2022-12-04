@@ -6,7 +6,7 @@ import classes from './PageChat.module.css'
 import { useNavigate } from "react-router-dom";
 
 
-export default function PageChat() {
+export default function PageChat({ chat_id }) {
     const [messages, setMessages] = useState([])
     const [text, setText] = useState('');
 
@@ -15,24 +15,36 @@ export default function PageChat() {
         navigate('/');
     }
 
-    function getMesagesFromLocalStorage() {
-        let messages = localStorage.getItem('messages');
-        if (messages === '' || messages === null) {
-            return
-        }
-        messages = JSON.parse(messages);
-        return messages.all;
-    }
+    useEffect(() => {
+        const pollItems = () => {
+        fetch('https://tt-front.vercel.app/messages')
+            .then((resp) => resp.json())
+            .then((data) => setMessages(data.reverse()));
+        };
+        setInterval(() => pollItems(), 3000);
+        return;
+        }, []);
 
-    function saveMessageToLocalStorage(message) {
-        let messages = localStorage.getItem('messages');
-        if (messages === '' || messages === null) {
-            localStorage.setItem('messages', JSON.stringify({ 'all': [] }));
-        }
-        messages = localStorage.getItem('messages');
-        messages = JSON.parse(messages);
-        messages.all.push(message);
-        localStorage.setItem('messages', JSON.stringify(messages));
+    function sendMessage(message) {
+        fetch(`https://tt-front.vercel.app/message`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(message),
+        }).then(function(response) {
+                console.log(response)
+        });
+        
+        // fetch(`api/chats/v1/${chat_id}/messages/`, {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify(message),
+        // }).then(function(response) {
+        //     console.log(response)
+        // })
     }
 
     function handleChange(event) {
@@ -46,24 +58,27 @@ export default function PageChat() {
             return;
         }
 
-        let time = new Date();
+        // let time = new Date();
         let message = {
+            // 'message': text,
+            // 'created_at': `${time.getHours()}:${time.getMinutes()}`,
+            // 'id': Date.now()
+            // for 
             'text': text,
-            'meta': `${time.getHours()}:${time.getMinutes()}`,
-            'id': Date.now()
+            'author': `Sofia`,
         };
         setMessages([...messages, { ...message, id: Date.now() }]);
-        saveMessageToLocalStorage(message)
+        sendMessage(message)
         setText('');
     }
-    function loadMessages() {
-        let savedMessages = getMesagesFromLocalStorage()
-        if (savedMessages) {
-            setMessages(savedMessages);
-        }
-    }
+    // function loadMessages() {
+    //     let savedMessages = getMesagesFromLocalStorage()
+    //     if (savedMessages) {
+    //         setMessages(savedMessages);
+    //     }
+    // }
 
-    useEffect(loadMessages, [])
+    // useEffect(loadMessages, [])
     return (
         <div className={classes.pageChat}>
             <ChatHeader handleChatClick={routeChange}></ChatHeader>
@@ -79,4 +94,3 @@ export default function PageChat() {
         </div>
     )
 }
-

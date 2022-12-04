@@ -7,15 +7,25 @@ import PageChat from './pages/PageChat/PageChat'
 
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.handleChatClick = this.handleChatClick.bind(this);
+		this.state = {
+			chat_id: 0
+		}
+	}
+
+	handleChatClick(chat_id) {
+		this.setState({ chat_id: chat_id })
+	}
+
 	render() {
 		return (
 			<Router>
 				<div>
-					{/* <GoToChat/> */}
-					{/* <PageProfile></PageProfile> */}
 					<Routes>
-						<Route path='/' element={<PageChatList />} />
-						<Route path='/messages' element={<PageChat />} />
+						<Route path='/' element={<PageChatList handleChatClick={this.handleChatClick} />} />
+						<Route path='/messages' element={<PageChat chat_id={this.state.chat_id} />} />
 						<Route path='/profile' element={<PageProfile />} />
 					</Routes>
 				</div>
