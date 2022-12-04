@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 import ProfileBody from '../../components/ProfileBody/ProfileBody'
 import image1 from './images/img1.png'

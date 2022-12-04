@@ -13,17 +13,18 @@
     animation: anim-lineUp 0.8s  ;
 }
 
-.message-text {
+.message_text {
     align-self: flex-end;
     font-size: 14px;
     animation: anim-lineUp 0.8s  ;
 }
 
-.message-meta {
+.meta {
     display: flex;
     justify-content: flex-end;
-    gap: 5px;
-    margin-top: 4px;
+    /* gap: 5px; */
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .message-date {
