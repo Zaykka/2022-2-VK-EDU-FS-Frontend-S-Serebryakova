@@ -58,7 +58,7 @@ export default function PageChat({ chat_id }) {
             return;
         }
 
-        let time = new Date();
+        // let time = new Date();
         let message = {
             // 'message': text,
             // 'created_at': `${time.getHours()}:${time.getMinutes()}`,
