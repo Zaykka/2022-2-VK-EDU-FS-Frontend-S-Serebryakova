@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Source.module.css";
 import { connect } from "react-redux";
-import { translate } from "./utils";
+import { translate } from "../../actions/translate";
 import { mapDispatch, mapState } from "./utils";
 
 

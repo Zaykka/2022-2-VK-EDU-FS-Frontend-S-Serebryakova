@@ -16,12 +16,8 @@ export default function PageHistory() {
     }
 
     function loadTranslations() {
-        let savedTranslations = getTranslationsFromLocalStorage()
-        if (savedTranslations) {
-            setTranslations(savedTranslations);
-        } else {
-            setTranslations([])
-        }
+        const savedTranslations = getTranslationsFromLocalStorage() || []
+        setTranslations(savedTranslations);
     }
 
     useEffect(loadTranslations, [])

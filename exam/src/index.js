@@ -5,25 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router } from 'react-router-dom'
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import {store} from './store'
 
-const defaulState = {
-    from_lang: "en",
-    to_lang: "ru",
-    translated_text: "",
-  };
-
-function reducer(state = defaulState, action) {
-    if (action.type === "SET_TRANSLATED_TEXT" ) {
-        return { ...state, translated_text: action.payload };
-    } else {
-        return state;
-    }
-}
-
-let store = createStore(reducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <React.StrictMode>
         <Router>
