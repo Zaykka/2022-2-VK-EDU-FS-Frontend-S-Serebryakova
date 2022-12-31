@@ -17,7 +17,6 @@ export default function PageHistory() {
 
     function loadTranslations() {
         let savedTranslations = getTranslationsFromLocalStorage()
-        console.log(savedTranslations)
         if (savedTranslations) {
             setTranslations(savedTranslations);
         } else {
