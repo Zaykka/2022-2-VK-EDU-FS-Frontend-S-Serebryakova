@@ -1,0 +1,10 @@
+.destination {border: 0;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-left: 10px;
+    outline: none;
+    height: 60px;
+    padding-left: 15px;
+    border-left: solid #e5e5e5;
+    width: 50%;
+}

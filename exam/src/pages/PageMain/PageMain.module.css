@@ -1,7 +1,7 @@
-.translater{
+.translater {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 3%;
     border: solid;
     border-color: #e5e5e5;
     margin-left: 1%;
@@ -9,44 +9,34 @@
     padding: 10px;
     border-radius: 10px;
 }
+
 .language_bar {
     display: flex;
-    flex-direction: row; 
-    /* justify-content: space-around; */
+    flex-direction: row;
     border-bottom: solid #e5e5e5;
 }
+
 .translater_header {
-    /* flex-basis: 95%; */
     font-size: 14px;
     color: #5d6065;
     padding-bottom: 1%;
-    /* padding-left: 30%; */
-    /* margin-left: 5%; */
-    /* width: 600px; */
 }
+
 .sync_alt {
     color: #5d6065;
     background-color: white;
     border: none;
-    margin-left: 20%;
-}
-.arrow_down {
-    color: #5d6065;
-    background-color: white;
-    border: none;
-    margin-left: 17%;
+    margin-left: 39%;
 }
 
 .translation_box {
     display: flex;
-    flex-direction: row; 
-    /* justify-content: space-around; */
-    /* border-bottom: solid #e5e5e5; */
+    flex-direction: row;
 }
+
 .source {
     height: 100px;
     width: 50%;
-    /* border-right: solid #e5e5e5; */
 }
 
 .destination {
@@ -63,7 +53,3 @@
     padding-left: 15px;
     width: calc(100% - 2px);
 }
-
-input[type=submit] {
-    visibility: collapse;
-} 
