@@ -10,14 +10,14 @@ export function save_translate(response, external_this) {
     external_this.props.setTraslatedText(trans);
 
     let translations = localStorage.getItem('translations');
-        if (translations === '' || translations === null) {
-            localStorage.setItem('translations', JSON.stringify({ 'all': [] }));
-        }
-        translations = localStorage.getItem('translations');
-        
-        translations = JSON.parse(translations);
-        translations.all.push(text);
-        localStorage.setItem('translations', JSON.stringify(translations));
+    if (translations === '' || translations === null) {
+        localStorage.setItem('translations', JSON.stringify({ 'all': [] }));
+    }
+    translations = localStorage.getItem('translations');
+
+    translations = JSON.parse(translations);
+    translations.all.push(text);
+    localStorage.setItem('translations', JSON.stringify(translations));
 }
 
 export function translate(external_this) {
@@ -36,8 +36,7 @@ export function translate(external_this) {
         options
     )
         .then((response) => response.json())
-        .then((response) => save_translate(response, external_this))
-        .catch((err) => console.error(err));
+        .then((response) => save_translate(response, external_this));
 }
 
 export function mapState(state) {

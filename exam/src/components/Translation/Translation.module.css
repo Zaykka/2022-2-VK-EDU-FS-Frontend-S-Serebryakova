@@ -13,14 +13,12 @@
 .source {
     padding-left: 20px;
     padding-top: 20px;
-    /* margin-top: 10px; */
     padding-bottom: 5px;
     font-size: 14px;
     animation: anim-lineUp 0.8s  ;
 }
 .destination {
     padding-left: 20px;
-    /* margin-top: 10px; */
     padding-bottom: 10px;
     color: #5d6065;
     font-size: 14px;

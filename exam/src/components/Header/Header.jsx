@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import classes from './Header.module.css'
 import { useNavigate } from "react-router-dom";
 
