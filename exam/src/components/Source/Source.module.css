@@ -1,0 +1,17 @@
+.source {
+    height: 100px;
+    width: 50%;
+}
+
+.form_input {
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    height: 60px;
+    padding-left: 15px;
+    width: calc(100% - 2px);
+}
+
+input[type=submit] {
+    visibility: collapse;
+} 

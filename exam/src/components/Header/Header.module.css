@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    flex-direction: row;  
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 20px;
+    color: #5d6065;
+    border-bottom: solid #e5e5e5;
+}
+.history {
+    background-color: #ebf0fb;
+    border-radius: 50px;
+    color: #3775e0;
+    border: none;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+    height: 50px;
+    width: 50px;
+}
+.hisroty_title {
+    color: #3775e0;
+    margin-left: 1%;
+}

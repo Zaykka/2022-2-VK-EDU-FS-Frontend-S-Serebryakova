@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 20px;
+    color: black;
+    border-bottom: solid #e5e5e5;
+}
+
+.clear_history {
+    color: #3775e0;
+    padding-left: 80%;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: solid #e5e5e5;
+    background-color: white;
+    border: none;
+}
+
+.clear_history:hover {
+    cursor: pointer;
+}
+
+.link {
+    padding-left: 1%;
+}
