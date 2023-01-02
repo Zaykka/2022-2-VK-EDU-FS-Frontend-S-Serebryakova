@@ -36,6 +36,7 @@ export default function PageChat({ chat_id }) {
     };
 
     function sendMessage(message) {
+        console.log(message['text'])
         fetch(`https://tt-front.vercel.app/message`, { //`https://tt-front.vercel.app/message` api/chats/v1/${chat_id}/messages/
             method: "POST",
             headers: {
@@ -139,15 +140,16 @@ export default function PageChat({ chat_id }) {
         let audio_src;
         if (audio) {
             audio_src = await getAudioSrc();
+            console.log(audio_src)
         }
         const message = {
-            "text": (text + (audio_src ? ('^^^' + audio_src) : '')),
-            "author": "Sofia"
+            text: (text + (audio_src ? ('^^^' + audio_src) : '')),
+            author: "Sofia"
         }
         if (!audio) {
             return
         }
-        
+        console.log(message['text'])
         sendMessage(message) 
         getMessages();
         setText('');
