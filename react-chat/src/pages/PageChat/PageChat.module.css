@@ -7,3 +7,43 @@
     font-size: 14px;
 }
 
+.image_preview {
+    height: 80px;
+    width: 80px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.audio_buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 40px;
+  margin-bottom: 5px;
+}
+
+.discard_audio_button,
+.send_button,
+.discard_button {
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    color: black;
+    background-color:  white;
+    scale: 70%;
+    cursor: pointer;
+    border: none;
+}
+
+.discard_button:hover,
+.discard_audio_button:hover,
+.send_button:hover {
+  background-color: #f1e5f4;
+}
+
+.discard_button:active,
+.discard_audio_button:active,
+.send_button:active {
+  background-color: #f1e5f4;
+}
+

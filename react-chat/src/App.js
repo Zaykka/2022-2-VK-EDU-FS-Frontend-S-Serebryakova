@@ -16,10 +16,12 @@ class App extends Component {
 	}
 
 	handleChatClick(chat_id) {
+		console.log(chat_id)
 		this.setState({ chat_id: chat_id })
 	}
 
 	render() {
+		console.log(`chat_id ${this.state.chat_id}`)
 		return (
 			<Router>
 				<div>

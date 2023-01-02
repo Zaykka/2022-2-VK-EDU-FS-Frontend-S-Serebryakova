@@ -21,7 +21,7 @@ export default function ChatsList({ handleChatClick, chats }) {
                     img_path={'pat'}
                     chat_last_message={"Ты куда пропал?"}
                     chat_time={"15:30"}
-                    key={chat.id}
+                    chat_id={chat.id}
                 ></Chat>
             )}
         </section>
