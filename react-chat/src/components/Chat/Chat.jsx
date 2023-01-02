@@ -3,15 +3,15 @@ import classes from './Chat.module.css'
 import { useNavigate } from "react-router-dom";
 
 
-export default function Chat({ handleChatClick, chat_name, img_path, chat_last_message, chat_time, key }) {
+export default function Chat({ handleChatClick, chat_name, img_path, chat_last_message, chat_time, chat_id }) {
     const navigate = useNavigate();
-
+    console.log(`chat_id ${chat_name} ${chat_id}`)
     return (
-        <div className={classes.chat} 
-        onClick={() => {
-            handleChatClick(key);
-            navigate('/messages');
-          }}>
+        <div className={classes.chat}
+            onClick={() => {
+                handleChatClick(chat_id);
+                navigate('/messages');
+            }}>
             <div className={classes.chat_picture}>
                 <img className={classes.picture} src="https://via.placeholder.com/60" alt="profile_photo" style={{ width: 60, height: 60 }} />
             </div>

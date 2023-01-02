@@ -23,6 +23,58 @@
     flex-basis: 60px;
 }
 
+/* .attachment_button {
+    color: #7c797d;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+} */
+
+/* .attachment_button {
+    padding: 18px 10px 10px;
+} */
+.audio_button,
+.location_button, 
+.attachment_button {
+    background-color: white;
+    color: #7c797d;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+    padding: 18px 10px 10px;
+}
+.audio_button,
+.audio_button_on_record{
+    padding-right: 10px;
+    padding-left: 5px;
+}
+.audio_button_on_record {
+    color: red;
+    border: 0;
+    background-color: white;
+}
+.audio_button:hover {
+    opacity: 0.8;
+}
+
+.audio_button:active {
+    opacity: 0.8;
+    color: #aa00ff;
+}
+
 input[type=submit] {
     visibility: collapse;
 } 
+
+.visually_hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+  
+input.visually_hidden:is(:focus, :focus-within) + label {
+    outline: thin dotted;
+}
