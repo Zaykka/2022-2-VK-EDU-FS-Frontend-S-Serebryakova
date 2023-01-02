@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/css/main.6e0d8278.css",
-    "main.js": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/main.9ac5f5e6.js",
-    "static/js/787.b5aa3df0.chunk.js": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/787.b5aa3df0.chunk.js",
+    "main.css": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/css/main.d613c386.css",
+    "main.js": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/main.f52a185d.js",
+    "static/js/787.890e5f70.chunk.js": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/787.890e5f70.chunk.js",
+    "static/media/img1.png": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/media/img1.ab4643bc6e41772c183c.png",
     "index.html": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/index.html",
-    "main.6e0d8278.css.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/css/main.6e0d8278.css.map",
-    "main.9ac5f5e6.js.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/main.9ac5f5e6.js.map",
-    "787.b5aa3df0.chunk.js.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/787.b5aa3df0.chunk.js.map"
+    "main.d613c386.css.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/css/main.d613c386.css.map",
+    "main.f52a185d.js.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/main.f52a185d.js.map",
+    "787.890e5f70.chunk.js.map": "/2022-2-VK-EDU-FS-Frontend-S-Serebryakova/static/js/787.890e5f70.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e0d8278.css",
-    "static/js/main.9ac5f5e6.js"
+    "static/css/main.d613c386.css",
+    "static/js/main.f52a185d.js"
   ]
 }
