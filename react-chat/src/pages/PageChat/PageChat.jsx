@@ -147,9 +147,8 @@ export default function PageChat({ chat_id }) {
         if (!audio) {
             return
         }
-        if (message.text !== "") { 
-            sendMessage(message) 
-        }
+        
+        sendMessage(message) 
         getMessages();
         setText('');
         setFile([]);
