@@ -1,22 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 
-.message { 
+.message {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     margin: 8px;
     padding: 10px 20px 0px 10px;
-    word-break:break-all;
+    word-break: break-all;
     align-self: flex-end;
     background-color: #f1e5f4;
     animation: anim-lineUp 0.8s;
 }
 
+.author {
+    align-self: flex-end;
+    font-size: 10px bold;
+    color: #8e24aa;
+    /* padding-bottom: 5px; */
+}
+
 .message_text {
     align-self: flex-end;
     font-size: 14px;
-    animation: anim-lineUp 0.8s  ;
+    animation: anim-lineUp 0.8s;
 }
 
 .meta {
@@ -33,21 +40,24 @@
 
 @keyframes anim-lineUp {
     0% {
-      opacity: 0;
-      transform: translateY(80%);
+        opacity: 0;
+        transform: translateY(80%);
     }
+
     20% {
-      opacity: 0;
+        opacity: 0;
     }
+
     50% {
-      opacity: 1;
-      transform: translateY(0%);
+        opacity: 1;
+        transform: translateY(0%);
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0%);
+        opacity: 1;
+        transform: translateY(0%);
     }
-  }
+}
 
 .image {
     max-width: 200px;

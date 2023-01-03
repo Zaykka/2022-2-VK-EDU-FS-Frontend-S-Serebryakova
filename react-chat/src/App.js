@@ -24,13 +24,11 @@ class App extends Component {
 		console.log(`chat_id ${this.state.chat_id}`)
 		return (
 			<Router>
-				<div>
 					<Routes>
 						<Route path='/' element={<PageChatList handleChatClick={this.handleChatClick} />} />
 						<Route path='/messages' element={<PageChat chat_id={this.state.chat_id} />} />
 						<Route path='/profile' element={<PageProfile />} />
 					</Routes>
-				</div>
 			</Router>
 		);
 	}
