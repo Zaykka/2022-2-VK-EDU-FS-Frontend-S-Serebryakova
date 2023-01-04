@@ -5,10 +5,11 @@ import MessageList from '../../components/MessageList/MessageList';
 import classes from './PageChat.module.css'
 import { useNavigate } from "react-router-dom";
 import Recorder from './Recorder';
+import { getMessagesAction, sendMessageAction } from '../../actions';
+import {connect} from 'react-redux'
 
 
-export default function PageChat({ chat_id }) {
-    const [messages, setMessages] = useState([])
+function PageChat(props) {
     const [text, setText] = useState('');
     const [file, setFile] = useState([]);
 
@@ -20,33 +21,9 @@ export default function PageChat({ chat_id }) {
     }
 
     useEffect(() => {
-        const pollItems = () => {
-            fetch(`https://tt-front.vercel.app/messages`) // https://tt-front.vercel.app/messages api/chats/${chat_id}/messages/
-                .then((resp) => resp.json())
-                .then((data) => setMessages(data.reverse()));
-        };
-        setInterval(() => pollItems(), 3000);
-        return;
+        props.getMessagesAction()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    const getMessages = () => {
-        fetch('https://tt-front.vercel.app/messages')
-            .then(res => res.json())
-            .then(data => setMessages(data.reverse()));
-    };
-
-    function sendMessage(message) {
-        console.log(message['text'])
-        fetch(`https://tt-front.vercel.app/message`, { //`https://tt-front.vercel.app/message` api/chats/v1/${chat_id}/messages/
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(message),
-        }).then(function (response) {
-            console.log(response)
-        })
-    }
 
     function handleChange(event) {
         setText(event.target.value);
@@ -79,8 +56,8 @@ export default function PageChat({ chat_id }) {
             file: img_src,
             audio: audio_src,
         };
-        setMessages([...messages, { ...message, id: Date.now() }]);
-        sendMessage(message)
+        props.sendMessageAction(message)
+        props.getMessagesAction()
         setText('');
         setFile([]);
     }
@@ -149,9 +126,8 @@ export default function PageChat({ chat_id }) {
         if (!audio) {
             return
         }
-        console.log(message['text'])
-        sendMessage(message) 
-        getMessages();
+        props.sendMessageAction(message)
+        props.getMessagesAction();
         setText('');
         setFile([]);
         stopRecording();
@@ -165,8 +141,8 @@ export default function PageChat({ chat_id }) {
                 'text': `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`,
                 'author': 'Sofia'
             }
-            setMessages([...messages, { ...message, id: Date.now() }]);
-            sendMessage(message)
+            props.sendMessageAction(message)
+            props.getMessagesAction();
         }
 
         function error() {
@@ -179,12 +155,12 @@ export default function PageChat({ chat_id }) {
             navigator.geolocation.getCurrentPosition(success, error);
         }
     }
-
+    console.log(props.messages)
     return (
         <div className={classes.pageChat}>
             <ChatHeader handleChatClick={routeChange}></ChatHeader>
             <MessageList
-                messages={messages}
+                messages={props.messages}
             ></MessageList>
             {file.length !== 0 && (
                 <>
@@ -225,3 +201,9 @@ export default function PageChat({ chat_id }) {
         </div>
     )
 }
+
+const mapStateToProps = (state) => ({
+    messages: state.messages.messages,
+});
+
+export default connect(mapStateToProps, { getMessagesAction, sendMessageAction })(PageChat)

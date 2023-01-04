@@ -12,6 +12,9 @@ export default function Message(props) {
 
     return (
         <div className={classes.message}>
+            <div className={classes.author}>
+                {props.author}
+            </div>
             <div className={classes.message_text}>
                 {props.text}
             </div>
